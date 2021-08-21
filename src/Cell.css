@@ -1,0 +1,22 @@
+.Cell 
+{
+	height: 50px;
+	width: 50px;
+	border-radius: 1px;
+	background-color: #263238;
+	transition: background-color 0.7s ease;
+}
+ 
+.Cell-lit 
+{
+	background-color: #00bcd4;
+}
+
+@media screen and (min-width: 480px)
+{
+	.Cell
+	{
+		height: 100px;
+		width: 100px;
+	}
+}

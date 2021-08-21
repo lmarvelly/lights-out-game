@@ -1,0 +1,26 @@
+React Components:
+App
+ Simple component that renders the Board that the game is played on
+ - Child Components:
+	 - Board
+
+	Board
+	The most advanced component that has the memory grid made up of
+	cells that are on/off. The board disapears once the game is won.
+	 - Header: 'Lights Out'
+	 - Static array of 25 Cells
+	 	- Cell: State On/Off
+	 - Props: 
+		 - gameWon: true/false
+
+		Cell
+		Simple component this is switched on or off when used clicks
+		on it. This will need to call a function from the board it 
+		receives from from the board, since that will need to update
+		the state
+		- Props: One/Off
+		- Properties:
+			- Colour: Black/White
+
+		Winning_Message
+		 - Properties: Message
