@@ -103,13 +103,13 @@ class Board extends Component
 			}
 		}
 		
-		// TODO: flip this cell and the cells around it
 		flipCell( x, y );
 		flipCell( x, y-1 );
 		flipCell( x, y+1 );
 		flipCell( x-1, y );
 		flipCell( x+1, y );
 
+		// THIS CODE DOESN'T WORK FOR SOME REASON
 		// let hasWon = board.every(row => row.every(cell => !cell));
 		let hasWon = true;
 		board.forEach(row => 
@@ -134,33 +134,7 @@ class Board extends Component
 	/** Render game board or winning message. */
 	render() 
 	{
-		// if (this.state.hasWon)
-		// {
-		// 	return (
-		// 		<div className='Winning'>
-		// 			<div className='neon-orange'>You</div>
-		// 			<div className='neon-blue'>Win</div>
-		// 		</div>
-		// 	)
-		// }
-
 		this.createBoard();
-		// this.flipCellsAround('1-1')
-		// if the game is won, just show a winning msg & render nothing else
-		// let tableBoard = this.state.board.map( (row, xIndex) => 
-		// 	<tr key={ xIndex.toString() }>
-		// 	{	
-		// 		row.map( (light, yIndex) =>
-		// 			<Cell 
-		// 				key={`${xIndex}-${yIndex}`}
-		// 				isLit={ light } 
-		// 				flipCellsAroundMe={ this.flipCellsAround } 
-		// 				x={ xIndex } 
-		// 				y={ yIndex }/>
-		// 		)
-		// 	}
-		// 	</tr>
-		// )
 
 		let tableBoard = [];
 		for ( let x = 0; x < this.props.numRows; x++ )
@@ -178,11 +152,10 @@ class Board extends Component
 			}
 			tableBoard.push(<tr key={ x.toString() }>{ row }</tr>);
 		}
-
-		// TODO: Key
 		return(
 			<div>
 				{
+					// if the game is won, just show a winning msg & render nothing else
 					this.state.hasWon 
 					? 
 					(
