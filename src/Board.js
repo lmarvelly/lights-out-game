@@ -27,8 +27,8 @@ import './Board.css';
  *
  *  This doesn't handle any clicks --- clicks are on individual cells
  *
- **/
-
+ *
+ */
 class Board extends Component 
 {
 	static defaultProps = 
@@ -40,7 +40,6 @@ class Board extends Component
 	constructor(props) 
 	{
 		super(props);
-		// TODO: set initial state
 		this.state = 
 		{
 			board: this.createBoard(),
@@ -51,18 +50,20 @@ class Board extends Component
 		this.flipCellsAround = this.flipCellsAround.bind(this);
 	}
 
-	/** create a board numRows high/numColumns wide, each cell randomly lit or unlit */
+	/**
+	 * create a board numRows high/numColumns wide, each cell randomly lit or unlit 
+	 */
 	createBoard() 
 	{
 		let board = [];
 		
+		// MY SOLUTION
 		// while( board.length < 5 )
 		// {
 		// 	const line = new Array(5);
 		// 	for( let i = 0; i < line.length; i++ )
 		// 	{
 		// 		const num = this.props.chanceLightStartsOn * (Math.random() * 2);
-		// 		// console.log(num);
 		// 		const random = Math.floor( num );
 		// 		line[i] = random === 1 ? true : false;
 		// 	}
