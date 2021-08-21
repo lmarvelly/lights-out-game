@@ -1,7 +1,6 @@
 import './App.css';
 
 import Board from './Board';
-// import Board from './SolutionBoard';
 
 function App() 
 {
